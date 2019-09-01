@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  client:
+    image: docker-local:5000/cli-hello-world
+    restart: always
+
+  server:
+    image: docker-local:5000/server-hello-world
+    restart: always
+    ports:
+      - "50051:50051"
