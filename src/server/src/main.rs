@@ -29,6 +29,7 @@ impl Greeter for GreeterService {
         req: HelloRequest,
         sink: UnarySink<HelloReply>
     ) {
+        println!("say_hello request");
         let msg = format!("Hello {}", req.get_name());
         let mut resp = HelloReply::default();
         resp.set_message(msg);

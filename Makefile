@@ -35,12 +35,12 @@ build: generate_source_from_proto_file
 
 server_docker:
 	cp src/target/release/server ./dockers/server/server
-	cd dockers/server && docker build . -t $(DOCKER_REGISTRY)/server && docker push $(DOCKER_REGISTRY)/server
+	cd dockers/server && docker build . -t $(DOCKER_REGISTRY)/server-hello-world && docker push $(DOCKER_REGISTRY)/server-hello-world
 	rm -f ./dockers/server/server
 
 cli_docker:
 	cp src/target/release/cli ./dockers/cli/cli
-	cd dockers/cli && docker build . -t $(DOCKER_REGISTRY)/cli && docker push $(DOCKER_REGISTRY)/cli
+	cd dockers/cli && docker build . -t $(DOCKER_REGISTRY)/cli-hello-world && docker push $(DOCKER_REGISTRY)/cli-hello-world
 	rm -f ./dockers/cli/cli
 
 all: build server_docker cli_docker
